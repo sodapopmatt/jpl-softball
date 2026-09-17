@@ -1,0 +1,123 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const card = 'rounded-2xl bg-white border border-neutral-200 p-6 mb-6';
+const h2 = 'font-display text-xl font-bold text-league-red mb-4';
+const p = 'text-sm text-neutral-700 leading-relaxed mb-3 last:mb-0';
+const ul = 'list-disc list-outside pl-5 space-y-2 text-sm text-neutral-700 leading-relaxed marker:text-league-red';
+const em = 'text-neutral-800';
+---
+<Layout title="B League Full Rules">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2"><a href="/rules/b" class="text-league-red hover:underline">← B League Rules</a></p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">B League Full Rules</h1>
+    <p class="text-neutral-600 mb-8">JPL Intramural Slow-Pitch Softball — B League</p>
+
+    <div class={card}>
+      <p class={p}>
+        The basis for JPL softball rules is the <strong>2009 Fast and Slow Pitch Softball Rules</strong>, published by the Southern California Municipal Athletic Federation (SCMAF).
+        For JPL B League, the modifications, clarifications, and highlights below take precedence over SCMAF rules. Changes to SCMAF rules are marked <em class={em}>(Modification)</em>, <em class={em}>(Clarification)</em>, or <em class={em}>(Highlight)</em>.
+        Rule and Section numbers refer to the 2009 SCMAF rule book.
+      </p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 1 — The Game, The Diamond, Equipment</h2>
+      <p class={p}><strong>Sec. 5</strong> (Modification). A regulation game consists of seven innings. Nominal starting times are 5:30, 6:50, and 8:10. The time limit is 1 hour 10 minutes; game time starts at the umpire's request for first pitch. An inning already begun is played to completion regardless of time. No more than a one-minute break between half-innings, unless it's a pitcher's first turn pitching in the game.</p>
+      <p class={p}><strong>Sec. 9</strong> (Modified). A game tied at the end of seven innings or when the time limit expires ends in a tie — no extra innings, except to resolve a tie during tournament play.</p>
+      <p class={p}><strong>Sec. 11.a</strong> (Clarification). A team forfeits if it doesn't have enough players to start within 5 minutes of the nominal starting time.</p>
+      <p class={p}><strong>Mercy Rule.</strong> A game ends any time after 5 innings when a team is behind by 15+ runs and has completed its turn at bat.</p>
+      <p class={p}><strong>Sec. 17</strong> (Modified). The diamond layout is as diagrammed in SCMAF rules, except the coed arc is shortened to 150 feet.</p>
+      <p class={p}><strong>Sec. 27.I</strong> (Clarification). In addition to SCMAF Sec. 27.A–H, all bats must comply with the City of Los Angeles Dept. of Recreation and Parks Non-Conforming Bat List (see the <a class="text-league-red hover:underline" href="/rules">main Rules page</a>).</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 2 — Definition of Terms</h2>
+      <p class={p}>(Clarification) The Infield Fly rule is in effect and enforced.</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 3 — Teams, Players and Substitutes</h2>
+      <p class={p}>Only persons who have signed a Waiver form may play, or be on the field or in the dugout, at a JPL Softball Program event. A Roster lists a team's waivered players; unwaivered names may appear as a means of establishing eligibility after the roster freeze date (after a team's 5th game), but no one is a formally rostered player — nor permitted on the field or in the dugout — without a signed waiver on file with the league or in the team manager's possession at the field.</p>
+      <p class={p}>If an opposing manager, umpire, or League/Program official can show a team played someone without a signed waiver on file, that player is treated as unrostered, subjecting the team to forfeiture.</p>
+      <p class={p}>(Modification) A team consists of ten (10) players, at least two (2) of whom are women. A game may be played without forfeit with eight (8) rostered players, at least one (1) female. At least two (2) female players must bat in the top 10 and may play any defensive position at all times. Penalties for not meeting this:</p>
+      <ul class={ul}>
+        <li>With only one female player present, the defense plays with only nine (9) players, and the catcher must be male. Offensively, an out is recorded where the missing female would have batted (within the first 10 batters). If a female batter leaves mid-game and the team can't replace her with two women in the first 10, an out is taken at her spot.</li>
+        <li>The game is forfeit if no female players are present.</li>
+      </ul>
+      <p class={p}>When a woman is batting, only 6 defenders may start play in front of the cones — penalty: batter awarded first base unless already on base safely.</p>
+      <p class={p}>Player categories: <strong>J</strong> (JPL/Caltech employees and contractors), <strong>F</strong> (immediate family of a Category J member — spouse, parent, child, or sibling), <strong>N</strong> (non-affiliates), and <strong>G</strong> (grandfathered non-affiliates who played as of the summer 2014 season, in effect only through the beginning of the spring 2016 season). At most 20% of a roster or 4 players (whichever is less) may be Category N or G. At most 2 N's are permitted in a given game's lineup, except 3 G's count the same as 2 N's, and 1 extra N is permitted in a batting order of 15+ players (offense only).</p>
+      <p class={p}>All players must have picture ID available at games. If a manager disputes a player's eligibility, they must request proof before the last out of the game; the opposing manager has 5 minutes after the last out to produce it (e.g. driver's license or JPL badge) or forfeit. Unresolved disputes go under protest per SCMAF Appendix A, notified before the game ends; the game is played to completion regardless, and the team is found afterward to have been legally or illegally rostered. An illegally rostered team forfeits that game and every game played afterward while still out of compliance.</p>
+      <p class={p}><strong>Sec. 3a</strong> (Modification). Any additional runner after the first may run for a base runner with the opposing manager's consent each time; both remain eligible to continue in the game. The designated runner is whoever made the last official out, regardless of gender (not necessarily whoever batted the out — e.g. on a fielder's choice, it's the runner who was forced or tagged out).</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 4 — Pitching Regulations</h2>
+      <p class={p}><strong>Sec. 4</strong> (Modification). Pitches must arc higher than the batter's head but no higher than sixteen (16) feet, unless both managers agree beforehand to unlimited height.</p>
+      <p class={p}><strong>Sec. 7</strong> (Modification). A pitcher gets five (5) warm-up pitches the first time pitching in a game; no warm-up is guaranteed in later innings for a pitcher who has already pitched.</p>
+      <p class={p}><strong>Sec. 13</strong> (Modification). For scoring, either the official home plate or the extension mat may be touched.</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 5 — Ball Dead, Ball Alive and in Play</h2>
+      <p class={p}><strong>Sec. 1.k.2</strong> (Highlight). If a batter swings at an illegal pitch, the play is governed by its outcome, without regard to the illegal pitch.</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 6 — Batting</h2>
+      <p class={p}>(Modification) Every batter starts with a count of 1 ball and 1 strike.</p>
+      <p class={p}><strong>Sec. 2</strong> (Modification). Every rostered player present who wants to play must play, subject to the female/Category N/G restrictions above; a player who doesn't want to play isn't forced to. A player left off the batting order while available to play may not play in any capacity for the rest of the game. The batting order (including at least 2 female batters in the top 10) must be followed, though defensive changes may happen anytime. Late arrivals are added to the order behind everyone who has already batted, or to the end if everyone has batted. If only one female is available to bat in the top 10 at the start, an out is recorded at the missing female's spot.</p>
+      <p class={p}><strong>Sec. 2.g</strong> (Modification). A batter who fails to bat for any reason is removed from the order and the game with no automatic out or other penalty — meant to let a player leave early without penalty, not to let a team skip batters, subject to the female restrictions above.</p>
+      <p class={p}><strong>Sec. 9.c</strong> (Highlight). Four Strikes Rule: the batter is out on a second foul ball after already having two strikes.</p>
+      <p class={p}><strong>Sec. 9.q</strong> (Highlight). No bunting or deliberate chop hits — penalty: batter out, ball dead, runners return to their pre-pitch base.</p>
+      <p class={p}><strong>Sec. 10.e</strong> (Highlight). A batter is awarded first base when the umpire grants an intentional walk at the opposing manager's request.</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Rule 7 — Base Running</h2>
+      <p class={p}><strong>Sec. 2.i</strong> (Highlight). Runners advance two bases on an overthrow into dead territory; the umpire awards bases based on runner position at the time of the pitch (if it's the infielder's first play) or at the time the wild throw left the fielder's hand (otherwise).</p>
+      <p class={p}><strong>Sec. 7.s</strong> (Highlight). A runner is out for failing to keep contact with their base until a legally pitched ball is released.</p>
+      <p class={p}><strong>Sec. 7.t</strong> (Highlight). No base stealing. An illegal advance is an automatic out; a runner returning to their legal base can still be forced out if the throw beats them back.</p>
+      <p class={p}><strong>Sec. 7.u.2</strong> (Modification). After a legal, unhit pitch that's thrown to a fielder other than the pitcher and dropped or overthrown, the force is removed and the runner must be tagged; all runners must retouch before advancing, at their own risk.</p>
+      <p class={p}><strong>Sec. 7.w</strong> (Clarification). Bodily collisions must always be avoided. If a runner willfully interferes with a batted ball or a fielder making a play, with obvious intent to break up a double play, the ball is dead, the runner is out for interference, and the batter-runner is also called out. No bases may be run or runs scored on the play.</p>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Protests</h2>
+      <ul class={ul}>
+        <li>SCMAF Appendix A applies.</li>
+        <li>The B League managers make up the body that rules on a protest.</li>
+        <li>A ruling requires a majority of voting managers to agree.</li>
+        <li>Quorum is more than half of the B League managers.</li>
+        <li>A protest ruling may be appealed to the JPL Softball Program Executive Committee.</li>
+      </ul>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Loma Alta Ground Rules</h2>
+      <ul class={ul}>
+        <li>The first fair ball hit over the fence counts as a home run. Subsequent home runs by male batters (female batters are exempt) count only as a single until the opposing team matches or exceeds your home run total by one; all runners advance one base from where they started the at-bat, even if not forced.</li>
+        <li>A batted ball that hits the tree in fair territory without clearing the fence is a ground-rule double (umpire's call on contact and location). If it hits the tree and then clears the fence in fair territory, it's a home run.</li>
+      </ul>
+    </div>
+
+    <details class="group rounded-2xl bg-white border border-neutral-200 mb-6">
+      <summary class="flex items-center justify-between gap-2 cursor-pointer list-none px-6 py-4">
+        <span class="font-display text-lg font-semibold text-league-red">Revision history</span>
+        <span class="inline-block text-neutral-400 transition-transform group-open:rotate-180">▾</span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-neutral-700 space-y-3">
+        <p><strong>18 Aug 2014</strong> — Added player Category G and its description (in effect through spring 2016); added Category N/G lineup limits; simplified rostering/lineup protest guidelines.</p>
+        <p><strong>6 Jun 2014</strong> — Warm-up pitches changed to 5 pitches when first pitching in the game, none guaranteed thereafter; added the one-minute half-inning break limit to Rule 1 Sec. 5.</p>
+        <p><strong>31 Mar 2014</strong> — Added waiver priority over roster rules as a preamble to Rule 3; updated the LA Parks banned-bat list URL.</p>
+        <p><strong>10 Aug 2012</strong> — Raised pitching arc height from 12' to 16'; the tree-contact ground rule became a ground-rule double; the 1-up home run rule now advances all runners one base with the batter.</p>
+        <p><strong>21 Apr 2011</strong> — Coed arc shortened to 150 feet; female batters exempted from the 1-up home run rule.</p>
+        <p><strong>24 Feb 2011</strong> — General clean-up of outdated SCMAF references and ground rules.</p>
+      </div>
+    </details>
+
+    <p class="text-sm text-neutral-500">
+      Program-wide rules and bylaws that apply to all leagues are on the <a class="text-league-red hover:underline" href="/rules">main Rules page</a>.
+    </p>
+  </section>
+</Layout>

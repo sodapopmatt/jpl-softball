@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const h3 = 'font-display text-base font-semibold text-neutral-900 mt-6 mb-2 first:mt-0';
+const p = 'text-sm text-neutral-700 leading-relaxed mb-4 last:mb-0';
+const ol = 'list-decimal list-outside pl-5 space-y-3 text-sm text-neutral-700 leading-relaxed marker:text-league-red marker:font-semibold mb-4 last:mb-0';
+const card = 'rounded-2xl bg-white border border-neutral-200 p-6 mb-6';
+---
+<Layout title="Program Rules">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2"><a href="/rules" class="text-league-red hover:underline">← All rules</a></p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-8">Program Rules</h1>
+
+    <div class={card}>
+      <h2 class="font-display text-xl font-bold text-league-red mb-4">Overview of the Rules</h2>
+
+      <h3 class={h3}>The Three Sources of Rules</h3>
+      <p class={p}>All Leagues are subject to rules from three different sources: (a) <strong>SCMAF Rules</strong>, (b) <strong>League Rules</strong>, and (c) <strong>Program Rules</strong>. SCMAF Rules constitute the bulk of applicable rules. However, each League has broad powers to amend the SCMAF Rules via its own League Rules, subject to constraints imposed by the Program Rules. Program Rules reign supreme throughout the JPL Softball Program, followed in authority by League Rules, then SCMAF Rules. SCMAF Rules are applicable unless amended or superseded by League Rules or Program Rules. League Rules are not permitted to conflict with Program Rules, and Program Rules may not be amended or reinterpreted by any League.</p>
+
+      <h3 class={h3}>The Three Types of Rules</h3>
+      <p class={p}>There are three basic types of rules: (a) <strong>Rules of Play</strong>, (b) <strong>Rules of Conduct</strong>, and (c) <strong>Rules of Operation</strong>.</p>
+      <p class={p}>Rules of Play are those rules that govern the play of the game. All Leagues start with SCMAF Rules of Play, specifically SCMAF Rules 1 through 8, including the appended points of emphasis. Each League may amend the SCMAF Rules of Play via its own League Rules of Play, subject to a few limitations (mostly safety-related) imposed by the Program Rules of Play.</p>
+      <p class={p}>Rules of Conduct are those rules that govern the conduct of individuals (and, by inference, teams) associated with the JPL Softball Program. The Rules of Conduct apply to all managers, players, and spectators — anyone who participates in the Program in any way. The Rules of Conduct start with the SCMAF Rules of Conduct, specifically SCMAF Rule 11 (Players Code of Conduct). However, there are no League Rules of Conduct. The SCMAF Rules of Conduct are amended and extended by the Program Rules of Conduct, which are uniformly applicable to all Leagues. No League may weaken or reinterpret the Program Rules of Conduct.</p>
+      <p class={p}>Rules of Operation are those rules that govern the operation of the JPL Softball Program. There are no applicable SCMAF Rules of Operation. Program Rules of Operation cover such things as league structure requirements and registration and eligibility regulations. League Rules of Operation must cover all necessary details of League operations, such as scheduling, tournaments, and so forth.</p>
+
+      <h3 class={h3}>The Three Levels of Enforcement of Rules</h3>
+      <p class={p}>There are three levels of enforcement of the rules: (a) <strong>Enforcement at the Game</strong>, (b) <strong>Enforcement by the League</strong>, and (c) <strong>Enforcement by the Program</strong>. Enforcement at the Game is the responsibility of the umpire or the team managers. League Enforcement must be performed by an authorized League board. Program Enforcement is in the hands of the Program Executive Council or an authorized officer of the Council. Rules of Play are enforced at the game, with occasional appeals upward to the League. Rules of Operation are enforced at the Program or League level, and seldom at the game. Rules of Conduct are enforced at all three levels.</p>
+
+      <p class="rounded-xl bg-neutral-50 border border-neutral-200 p-4 text-sm text-neutral-600 mt-6">
+        See the <a class="text-league-red hover:underline" href="http://program.jplsoftball.org/rules-organization.pdf">Organization and Enforcement Hierarchy diagram</a> for a visual summary of how these sources and enforcement levels relate.
+      </p>
+    </div>
+
+    <div class={card}>
+      <h2 class="font-display text-xl font-bold text-league-red mb-4">Program Rules of Play</h2>
+      <ol class={ol}>
+        <li>The SCMAF Rules on allowable equipment (Rule 1, Secs. 27 through 35) may not be amended by any League. Included are rules forbidding bare feet, metal cleats, and illegal bats.</li>
+        <li>For safety, no new inning may be started after local sunset on unlighted fields. Any League may set an earlier game termination time but not a later one.</li>
+        <li>For safety, all bats, balls, gloves, and other equipment and materials not in use must be kept away from the field of play in a designated dead ball area. This includes all food and beverage containers and all persons and animals that do not belong on the field.</li>
+        <li>Sliding is optional unless regulated by a specific League rule. Whether a baserunner chooses to slide or not, they must avoid collision or any interference with a fielder attempting to make a legal fielding play. A baserunner who intentionally collides with any fielder is automatically out, and may additionally face ejection for violation of the Rules of Conduct. (A gentle push or shove does not constitute a collision.)</li>
+        <li>All SCMAF rules concerning obstruction are strictly in effect and may not be amended by any League — no fielder may block a runner's advance to a base unless fielding a batted ball, receiving a thrown ball, or ready to touch the runner.</li>
+      </ol>
+
+      <h3 class={h3}>Enforcement of the Rules of Play</h3>
+      <ol class={ol}>
+        <li>Enforcement of the Rules of Play is in the hands of the umpire(s). If a neutral umpire is not available, the umpire(s) must be supplied by the opposing teams, per the SCMAF "Duties of Umpires."</li>
+        <li>If the umpire is supplied by one of the opposing teams, the umpire's decision may be overruled by mutual agreement between both managers. A decision by a neutral umpire may not be overruled.</li>
+        <li>Protests of umpiring decisions on Rules of Play may be filed per SCMAF Rule 9 or applicable League Rules of Operation, and must be heard in a timely manner by the League.</li>
+        <li>Decisions by the League on protests based on Rules of Play are not appealable to the Program Executive Council.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class="font-display text-xl font-bold text-league-red mb-4">Program Rules of Conduct</h2>
+      <ol class={ol}>
+        <li>All elements of SCMAF Rule 11 (Players Code of Conduct) are part of the Program Rules of Conduct, with these exceptions: at the umpire's discretion, rules on vulgar language, gambling, and smoking may be applied loosely, and rules requiring players to remain in the dugout / prohibiting non-team members in the dugout may be waived.</li>
+        <li>All Rules of Conduct apply to all managers, players, and spectators, and are applicable at the game site (on and off the field) for the entire time it is reserved or used by JPL, not just during the game itself.</li>
+        <li>Team managers have sole responsibility for resolving disputes that occur during a game. Interjection by anyone else is itself a violation of the Rules of Conduct and may result in ejection.</li>
+        <li>Continued or willful violation of the Rules of Play is considered a violation of the Rules of Conduct, subjecting the offender to ejection.</li>
+        <li>Anyone who instigates or retaliates in a physical attack, or engages in fighting at the game site (before, during, or after the game), faces the most severe penalty available, even for a first offense.</li>
+      </ol>
+
+      <h3 class={h3}>Enforcement of the Rules of Conduct</h3>
+      <ol class={ol}>
+        <li>Enforcement at the game is the responsibility of the umpire or the managers. A neutral umpire's determination is final; without one, decisions require mutual agreement between both managers.</li>
+        <li>Violations are punishable at the game by warning or ejection. An ejected person who does not immediately leave causes their team to forfeit and receives a second ejection.</li>
+        <li>Violations are also punishable after the game. Leagues may hand out limited suspensions (one or two games/weeks); the Program Executive Council can levy unlimited suspensions (indefinite, with a minimum period before appeal). Suspensions are Program-wide. Participating while suspended causes an automatic team forfeit and an automatic unlimited suspension for the offender.</li>
+        <li>Every League imposes an automatic one-week limited suspension — including a minimum of one game in the League where the ejection occurred — on anyone ejected from a game in any JPL League, enforced across all Leagues the person participates in (even as a spectator).</li>
+        <li>A League may impose a one- or two-game/week limited suspension for any ejection-worthy violation, whether or not an ejection actually occurred; once imposed, a minimum one-week suspension is enforced across all Leagues the person participates in.</li>
+        <li>The Program Executive Council automatically imposes an unlimited suspension on anyone receiving two limited suspensions for separate offenses in the same season (unless it finds one was unwarranted). This suspension is not reviewed until the next season at the earliest.</li>
+        <li>The Program Executive Council automatically imposes an unlimited suspension, even for a first offense, on anyone who instigates or retaliates in a physical attack or engages in fighting at a game site. This suspension is not reviewed for at least one year.</li>
+        <li>Ejections and limited suspensions may be reviewed within the League if its rules allow, but are not reviewable by the Program Executive Council except to determine whether an unlimited suspension should follow.</li>
+        <li>Anyone receiving an unlimited suspension may appeal to the Program Executive Council for reinstatement after the minimum suspension period, limited to one appeal per year, and must show the suspension was unjust or that their behavior has sufficiently reformed.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class="font-display text-xl font-bold text-league-red mb-4">Program Rules of Operation</h2>
+
+      <h3 class={h3}>League Structure Rules</h3>
+      <p class={p}><strong>League Formation Requirements.</strong> To establish a league: a unique concept and approach to play (competitive/non-competitive, mandatory ratios, etc.); a minimum of 6 teams; a League Commissioner and Assistant Commissioner(s); a League Registrar and Rules Committee; and a League Board empowered to resolve disputes and protests and hand out suspensions (only Board members with no direct stake in the outcome may participate in a given decision). Before play starts, a league must also have: approved league rules; a schedule; a protest-resolution procedure; a tie-breaker procedure; a tournament/playoff procedure; and ground rules for each field it plays on.</p>
+      <p class={p}><strong>League-Specific Rules.</strong> Each league must generate approved, signed-off rules before play starts, using Program Executive Council standing-committee guidance and the current SCMAF rule book. Approval requires: review by the standing committees for consistency with program guidelines; approval (signature) by league managers, signifying the team will abide by the rules; and signature of all league officers, signifying they will enforce the rules.</p>
+
+      <h3 class={h3}>Registration &amp; Eligibility Rules</h3>
+      <p class={p}>All participants and teams must be registered, with a record maintained by the Program. Registration requires meeting eligibility requirements, paying fees, and complying with announced procedures/deadlines (finalized at least three months before the season starts).</p>
+      <p class={p}>Eligible individuals fall into one of three categories: <strong>Category J (JPL)</strong> — JPL or Caltech employees, contractors, students, and retirees; <strong>Category F (family)</strong> — immediate family (spouses, parents, children, siblings) of Category J; <strong>Category N</strong> — everyone else. No more than 20% of a team's roster may be Category N (leagues may impose stricter limits). Each league sets its own minimum age requirement (recommended 13–16+ depending on competitiveness).</p>
+      <p class={p}><strong>Team Registration Dates:</strong> a Team Entry Date (roster meeting minimum requirements, at least a month before play starts); a Roster Freeze Date (~1 month into the season, after which replacements are limited to injury/relocation cases, and any replaced player can't rejoin until the next season); and a Final Freeze Date (~2 weeks before the season ends, after which no players may be added — except co-ops, APTs, and new hires, who may be added without restriction up to the Final Freeze Date).</p>
+      <p class={p}><strong>Team Roster Requirements:</strong> teams must register by the entry deadline with a minimum roster of 15 or more players (leagues may set a higher minimum), and all team members — whenever added — must be fully registered, eligible, and paid up.</p>
+      <p class={p}><strong>Cross-Registration:</strong> no player may register for more than one team in the same league, or switch teams within a league after play starts. Each team should try to roster at least 12 players not co-registered elsewhere, and leagues may cap cross-registration from specific other leagues.</p>
+
+      <h3 class={h3}>Suspension of Teams and Individuals</h3>
+      <p class={p}>A team may be suspended indefinitely for nonpayment of fees, two or more forfeited games, or repeated Rules of Conduct violations — levied by the Program Executive Council, which notifies the team of the reasons and reinstatement conditions. A suspended team may request reinstatement before the next season if it corrects the underlying problems. Individuals may be suspended by the League or Council for Rules of Conduct violations.</p>
+
+      <h3 class={h3}>Reporting Requirements</h3>
+      <p class={p}>Both managers must report all forfeits and exceptional problems, disputes, or Rules of Conduct violations to the League Commissioner. The Commissioner must notify the Program Registrar of any ejection or limited suspension; the Registrar in turn notifies all Leagues in which a suspended individual is registered, since suspensions apply program-wide. A suspended or ejected individual must also inform each of their own team managers.</p>
+
+      <h3 class={h3}>Enforcement of the Rules of Operation</h3>
+      <p class={p}>Enforcement falls to the League Commissioner, the Program Executive Council, or an authorized Council officer; anyone out of compliance is restrained from further participation pending compliance. The League Commissioner enforces prescribed forfeit penalties. Violations affecting game play (e.g., an unregistered player) must be resolved by mutual agreement between managers, or else protested to the League, which is the final arbiter on whether to reverse or replay the game.</p>
+    </div>
+  </section>
+</Layout>

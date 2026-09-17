@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const forms = [
+  { name: 'Team Fee Deposit Form', desc: 'Proof of payment — required for all teams in all leagues', url: '/forms/TeamFeeDepositForm.pdf' },
+  { name: 'Player Waiver Form', desc: 'Release of liability — required for every player before playing', url: '/forms/PlayerWaiverForm.pdf' },
+];
+---
+<Layout title="Register">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-4">Register</h1>
+    <p class="text-neutral-600 mb-8">
+      Eligibility is restricted to JPL/Caltech employees, contractors, faculty and students, and their immediate family members.
+    </p>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6 mb-8">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-3">Looking for a team? (Free agents)</h2>
+      <p class="text-neutral-700 text-sm">
+        Contact <a class="hover:underline text-league-red" href="mailto:Jennifer.R.Miller@jpl.nasa.gov">Jennifer Miller</a> (4-5705)
+        or <a class="hover:underline text-league-red" href="mailto:richard.chen@jpl.nasa.gov">Richard Chen</a> (4-1259)
+        to get on the free agent list, and they'll connect you with a team.
+      </p>
+    </div>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6 mb-8">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-3">Registering a team</h2>
+      <p class="text-neutral-700 text-sm mb-4">
+        Every team must submit the forms below to its league commissioner and the program registrar/treasurer before the season deadline.
+        Registration and payment instructions are handed out at the annual Organizational Meeting.
+      </p>
+      <ul class="space-y-3">
+        {forms.map((f) => (
+          <li class="flex items-start justify-between gap-4 rounded-xl bg-neutral-50 border border-neutral-200 p-4">
+            <div>
+              <p class="font-medium">{f.name}</p>
+              <p class="text-sm text-neutral-600">{f.desc}</p>
+            </div>
+            <a href={f.url} target="_blank" rel="noopener" class="shrink-0 rounded-full border border-neutral-300 px-4 py-1.5 text-sm font-semibold hover:bg-neutral-100 transition-colors">
+              Download
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-4 text-sm">
+        <a href="/payments" class="text-league-red hover:underline">See which teams have paid their fees →</a>
+      </p>
+    </div>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-3">Questions?</h2>
+      <p class="text-neutral-700 text-sm">
+        See the <a class="hover:underline text-league-red" href="/contact">contact page</a> for program and league board contacts.
+      </p>
+    </div>
+  </section>
+</Layout>

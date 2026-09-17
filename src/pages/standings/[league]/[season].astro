@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import leagues from '../../../data/leagues.json';
+import teams from '../../../data/teams.json';
+import schedule from '../../../data/schedule.json';
+import seasons from '../../../data/seasons.json';
+import StandingsTable from '../../../components/StandingsTable.astro';
+import { seasonsForLeague } from '../../../utils/season.js';
+import { standingsFor } from '../../../utils/standings.js';
+
+export function getStaticPaths() {
+  return seasons.map((s) => {
+    const league = leagues.find((l) => l.id === s.league);
+    return {
+      params: { league: league.id.toLowerCase(), season: s.id },
+      props: { league, season: s },
+    };
+  });
+}
+
+const { league, season } = Astro.props;
+const leagueSeasons = seasonsForLeague(seasons, league.id);
+const standings = standingsFor(teams, schedule, league.id, season.id);
+---
+<Layout title={`${league.name} Standings — ${season.label}`}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-6">
+      <a href="/standings" class="text-league-red hover:underline">← All standings</a>
+    </p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-8">Standings</h1>
+    <StandingsTable league={league} season={season} seasons={leagueSeasons} standings={standings} />
+  </section>
+</Layout>

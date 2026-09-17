@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+---
+<Layout title="Rules">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Rules &amp; Info</h1>
+    <p class="text-neutral-600 mb-8">Program-wide rules apply to every league. Each league also has its own rule set on top of these.</p>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6 mb-10">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-4">Program-wide</h2>
+      <ul class="space-y-3 text-sm text-neutral-700 list-disc list-inside marker:text-league-red">
+        <li><a class="text-league-red hover:underline" href="/rules/program-rules">Program-wide Rules</a> — rules of play, conduct, and operation that apply to every league</li>
+        <li><a class="text-league-red hover:underline" href="http://program.jplsoftball.org/rules-organization.pdf">Organization and Enforcement Hierarchy</a> — a diagram of how rules and enforcement levels relate</li>
+        <li>Legal bats are determined by the <a class="text-league-red hover:underline" href="https://www.laparks.org/sites/default/files/sports/softball/pdf/Banned%20Bat%20List%201-25-25.pdf">Non-Conforming Bat List</a>, maintained by LA City Parks &amp; Recreation</li>
+        <li><a class="text-league-red hover:underline" href="/rules/bylaws">Bylaws</a> of the JPL Softball Program</li>
+      </ul>
+    </div>
+
+    <h2 class="font-display text-2xl font-bold mb-4">League rules</h2>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {leagues.map((league) => (
+        <a
+          href={`/rules/${league.id.toLowerCase()}`}
+          class="rounded-2xl bg-white border border-neutral-200 p-6 hover:border-league-red/40 transition-colors"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-display text-xl font-bold">{league.name}</h3>
+            <span class="text-xs uppercase tracking-wide text-neutral-500">{league.tagline}</span>
+          </div>
+          <p class="text-sm text-neutral-600 mb-3">{league.description}</p>
+          <p class="text-sm text-league-red">View {league.name} rules →</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-10 rounded-2xl bg-white border border-neutral-200 p-6">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-2">Rainouts</h2>
+      <p class="text-sm text-neutral-700">
+        Contact your league commissioner (see <a class="text-league-red hover:underline" href="/contact">Contact</a>) to report or check on rainouts.
+        Games are generally not called first thing in the morning, since weather often clears by game time.
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+import schedule from '../data/schedule.json';
+import seasons from '../data/seasons.json';
+import { currentSeason } from '../utils/season.js';
+---
+<Layout title="Schedule">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Schedule</h1>
+    <p class="text-neutral-600 mb-8">Pick a league to see its full schedule.</p>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      {leagues.map((league) => {
+        const season = currentSeason(seasons, league.id);
+        const gameCount = schedule.filter((g) => g.season === season.id).length;
+        return (
+          <a
+            href={`/schedule/${league.id.toLowerCase()}`}
+            class="rounded-2xl bg-white border border-neutral-200 p-6 hover:border-league-red/40 transition-colors"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <h2 class="font-display text-xl font-bold">{league.name}</h2>
+              <span class="text-xs uppercase tracking-wide text-neutral-500">{league.tagline}</span>
+            </div>
+            <p class="text-sm text-neutral-600 mb-3">{league.field} · {season.label}</p>
+            <p class="text-sm text-league-red">{gameCount} games →</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</Layout>

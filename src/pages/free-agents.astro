@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+import freeAgents from '../data/freeAgents.json';
+
+const categoryLabels = {
+  J: 'JPL, Caltech, or retiree',
+  F: 'Immediate family of Cat J',
+  N: 'Other (non-affiliate)',
+  G: 'Grandfathered non-affiliate',
+};
+---
+<Layout title="Free Agents">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Free Agents</h1>
+    <p class="text-neutral-600 mb-10">
+      Looking for a team, or need a player? These are people who've asked to be placed on a team. Managers,
+      please let the league contacts below know once you've picked someone up.
+    </p>
+
+    {leagues.map((league) => {
+      const agents = freeAgents.filter((a) => a.league === league.id);
+      return (
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold mb-1">{league.name}</h2>
+          <p class="text-sm text-neutral-600 mb-4">
+            To join or leave this list, contact{' '}
+            {league.freeAgentContacts.map((c, i) => (
+              <>
+                {i > 0 && (i === league.freeAgentContacts.length - 1 ? ' or ' : ', ')}
+                <a class="text-league-red hover:underline" href={`mailto:${c.email}`}>{c.name}</a>
+                {c.phone ? ` (${c.phone})` : ''}
+              </>
+            ))}.
+          </p>
+
+          {agents.length === 0 ? (
+            <p class="text-sm text-neutral-500 rounded-xl bg-white border border-neutral-200 p-5">
+              No free agents currently listed for {league.name}.
+            </p>
+          ) : (
+            <div class="overflow-x-auto rounded-xl border border-neutral-200">
+              <table class="w-full text-sm">
+                <thead class="bg-white text-neutral-600 text-left">
+                  <tr>
+                    <th class="px-4 py-3 font-medium">Name</th>
+                    <th class="px-4 py-3 font-medium">Category</th>
+                    <th class="px-4 py-3 font-medium">Contact</th>
+                    <th class="px-4 py-3 font-medium">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {agents.map((a) => (
+                    <tr class="border-t border-neutral-100 bg-neutral-50">
+                      <td class="px-4 py-3 font-medium">{a.name}</td>
+                      <td class="px-4 py-3" title={categoryLabels[a.category] || ''}>{a.category}</td>
+                      <td class="px-4 py-3 text-neutral-600">
+                        <a class="hover:underline" href={`mailto:${a.email}`}>{a.email}</a>
+                        {a.phone ? <><br/>{a.phone}</> : null}
+                      </td>
+                      <td class="px-4 py-3 text-neutral-600">{a.notes || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      );
+    })}
+
+    <div class="rounded-xl bg-white border border-neutral-200 p-5 text-sm text-neutral-600">
+      <p class="font-semibold text-neutral-800 mb-2">Categories</p>
+      <ul class="space-y-1">
+        {Object.entries(categoryLabels).map(([code, label]) => (
+          <li><span class="font-medium text-neutral-800">{code}</span> — {label}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Layout>

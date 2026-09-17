@@ -1,0 +1,79 @@
+[
+  {
+    "id": "2026-fall-b",
+    "league": "B",
+    "label": "Fall 2026",
+    "start": "2026-08-31",
+    "current": true
+  },
+  {
+    "id": "2026-summer-b",
+    "league": "B",
+    "label": "Summer 2026",
+    "start": "2026-05-01",
+    "current": false
+  },
+  {
+    "id": "2026-spring-b",
+    "league": "B",
+    "label": "Spring 2026",
+    "start": "2026-02-01",
+    "current": false
+  },
+  {
+    "id": "2025-fall-b",
+    "league": "B",
+    "label": "Fall 2025",
+    "start": "2025-08-01",
+    "current": false
+  },
+  {
+    "id": "2025-summer-b",
+    "league": "B",
+    "label": "Summer 2025",
+    "start": "2025-05-01",
+    "current": false
+  },
+  {
+    "id": "2025-spring-b",
+    "league": "B",
+    "label": "Spring 2025",
+    "start": "2025-02-01",
+    "current": false
+  },
+  {
+    "id": "2027-c",
+    "league": "C",
+    "label": "2027 Season",
+    "start": "2027-04-01",
+    "current": false
+  },
+  {
+    "id": "2026-c",
+    "league": "C",
+    "label": "2026 Season",
+    "start": "2026-04-01",
+    "current": true
+  },
+  {
+    "id": "2024-c",
+    "league": "C",
+    "label": "2024 Season",
+    "start": "2024-04-01",
+    "current": false
+  },
+  {
+    "id": "2023-c",
+    "league": "C",
+    "label": "2023 Season",
+    "start": "2023-04-01",
+    "current": false
+  },
+  {
+    "id": "2022-c",
+    "league": "C",
+    "label": "2022 Season",
+    "start": "2022-04-01",
+    "current": false
+  }
+]

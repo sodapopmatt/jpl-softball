@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const ol = 'list-decimal list-outside pl-5 space-y-3 text-sm text-neutral-700 leading-relaxed marker:text-league-red marker:font-semibold';
+const ul = 'list-disc list-outside pl-5 space-y-2 mt-2';
+const card = 'rounded-2xl bg-white border border-neutral-200 p-6 mb-6';
+const h2 = 'font-display text-xl font-bold text-league-red mb-4';
+---
+<Layout title="Bylaws">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2"><a href="/rules" class="text-league-red hover:underline">← All rules</a></p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Bylaws</h1>
+    <p class="text-neutral-600 mb-8">of the JPL Intramural Softball Program</p>
+
+    <div class={card}>
+      <h2 class={h2}>Article I — The Program</h2>
+      <ol class={ol}>
+        <li><strong>Program Purpose.</strong> The JPL Intramural Softball Program (the Program) exists to provide the JPL community opportunities for competitive and noncompetitive softball at various levels of play.</li>
+        <li><strong>Program Auspices.</strong> The Program operates under the auspices of the JPL Employees Recreation Club (ERC).</li>
+        <li><strong>Program Governance.</strong> The Program's business and affairs are regulated by these By-Laws and by ERC's general operating rules.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article II — Program Responsibilities</h2>
+      <ol class={ol}>
+        <li><strong>To Program Participants.</strong> Provide a social outlet through athletic activity, and the opportunity to play for every eligible individual who wishes to participate.</li>
+        <li><strong>To ERC.</strong> Conduct internal affairs consistent with ERC's goals for clubs and programs; manage a sound, enjoyable program.</li>
+        <li><strong>To JPL and Caltech.</strong> Provide an environment conducive to bringing JPL/Caltech personnel together to establish or enhance work relationships.</li>
+        <li><strong>To the Community.</strong> Ensure officers, officials, teams, players, and spectators properly represent JPL during games, practices, and related activities out in the community.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article III — Program Structure</h2>
+      <ol class={ol}>
+        <li><strong>Program.</strong> Comprises one or more Leagues, managed by a Program Executive Council (Article IV).</li>
+        <li><strong>Leagues.</strong> Each consists of a number of Teams, must meet qualifying standards (Article V), and is represented to the Program by its League Commissioner (or Assistant, acting in their absence).</li>
+        <li><strong>Teams.</strong> Each consists of individual Players, must meet qualifying/eligibility standards (Article VI), and is represented by its Team Manager (or Alternate, acting in their absence).</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article IV — Program Management</h2>
+      <ol class={ol}>
+        <li><strong>Executive Council.</strong> Manages the Program.</li>
+        <li><strong>Composition.</strong> One League Commissioner elected from each League; 8–10 elected Members-at-Large; and an indeterminate number of non-voting Aides and Special Committee Chairmen. Eight Members-at-Large serve as Council Officers and Standing Committee Chairmen.</li>
+        <li><strong>Council Officers</strong> (elected from Members-at-Large): Program Commissioner, Deputy Program Commissioner, Program Secretary, Program Treasurer, and Program Registrar.</li>
+        <li><strong>Standing Committees</strong> (chaired by Members-at-Large not serving as Officers, plus at least two more members each): League Structure Committee, Registration and Eligibility Committee, and Program Rules Committee.</li>
+        <li><strong>Non-voting Aides and Special Committees.</strong> Appointed by the Council as needed.</li>
+        <li>
+          <strong>Method of Election.</strong>
+          <ul class={ul}>
+            <li>League Commissioners: elected in March by majority vote of their League's Team Managers, at the annual meeting.</li>
+            <li>Members-at-Large: elected at the annual meeting by plurality vote of attending Team Managers; the number to elect (8, 9, or 10) is set by majority vote just before the election. League Commissioners are not eligible.</li>
+            <li>Only Team Managers (or Alternates acting for them) of officially registered Teams may vote.</li>
+            <li>Terms run one year, election to election.</li>
+            <li>Officers and Committee Chairmen are elected at the Council's inaugural meeting by majority vote of voting members; only Members-at-Large are eligible, and no one may hold more than one such post.</li>
+            <li>Non-voting Aides and Special Committees are appointed by majority Council vote, with no eligibility restrictions, and serve at the Council's will.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Council Voting.</strong> Voting members are the elected Members-at-Large (including Officers and Committee Chairmen) and League Commissioners. Decisions require majority (or two-thirds, where specified) vote with at least half of voting members present. Non-voting Aides/Chairmen may attend and discuss but not vote, and don't count toward quorum.
+        </li>
+        <li>
+          <strong>Meetings and Communiqués.</strong> Every February, the Council calls for registration for the upcoming season. It holds an annual meeting each March of all Team Managers of duly registered teams, where Commissioners and Members-at-Large are (re)elected. The new Council holds its inaugural meeting within a week, then meets at least every two months, including an end-of-season meeting in September. The Program Commissioner (or at least one-third of Council members) may call a special meeting, scheduled as soon as practical with at least three days' notice. Meetings are chaired by the Program Commissioner or, in their absence, the Deputy.
+        </li>
+        <li>
+          <strong>Absences, Vacancies, and Removal.</strong> An Assistant League Commissioner may represent and vote for their League when the Commissioner is unavailable. A Council member may be removed by two-thirds vote for conduct detrimental to the Program. A vacant League Commissioner post is filled by an Assistant's ascension or special vote of the League's Team Managers; other vacancies are filled by majority Council vote.
+        </li>
+        <li>
+          <strong>Job Descriptions.</strong>
+          <ul class={ul}>
+            <li><strong>Program Commissioner</strong> — principal executive officer; supervises Program business and affairs; presides at Council meetings; ex officio member of all committees.</li>
+            <li><strong>Deputy Program Commissioner</strong> — acts for the Commissioner in their absence or incapacity, with full powers and restrictions; performs other assigned duties.</li>
+            <li><strong>Program Secretary</strong> — keeps Program records and Council meeting minutes, gives required notices, handles correspondence, and maintains the Council member roll.</li>
+            <li><strong>Program Treasurer</strong> — financial officer; maintains records per ERC and Council requirements; prepares the annual budget proposal (fees, field rental, equipment, ERC support budget); negotiates the support budget with ERC; responsible for all Program funds and property (deposited with ERC).</li>
+            <li><strong>Program Registrar</strong> — maintains the database of registered Teams and Players, publishes the master registrant list, monitors Program-level registration/eligibility compliance, and assists League Registrars.</li>
+            <li><strong>Chairman, League Structure Committee</strong> — presides over league formation requirements and new-league petition reviews.</li>
+            <li><strong>Chairman, Registration and Eligibility Committee</strong> — presides over team registration rules/deadlines, player eligibility, and registration reviews.</li>
+            <li><strong>Chairman, Program Rules Committee</strong> — presides over Program-level rules of play, conduct, and operation; convenes joint meetings with League Rules Committees to resolve rule conflicts (Article VII).</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article V — League Structure and Management</h2>
+      <ol class={ol}>
+        <li><strong>League Requirements.</strong> Established or amended by the Council on League Structure Committee recommendation.</li>
+        <li><strong>New Leagues.</strong> Any four or more Teams may petition the Council to form a League; the League Structure Committee reviews for qualifying standards, and formation requires a two-thirds Council vote.</li>
+        <li><strong>Teams Joining Leagues.</strong> A Team may choose any League at February registration; at other times, only as Program and League rules permit.</li>
+        <li><strong>Removal of Teams.</strong> A non-compliant Team may be ousted by two-thirds vote of its League's Team Managers plus two-thirds Council concurrence. An ousted Team must be placed in a more appropriate League unless the Council finds (two-thirds vote) its participation anywhere is detrimental to the Program.</li>
+        <li>
+          <strong>League Management.</strong> Team Managers elect a League Commissioner and Assistant Commissioner(s) by majority vote. The League is represented on the Council by its Commissioner (or an Assistant, in their absence). The Commissioner appoints a League Registrar, a Rules Committee (at least 3 members), and any other Aides/Committees needed.
+        </li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article VI — Team Registration and Team Management</h2>
+      <ol class={ol}>
+        <li><strong>Registration and Eligibility Requirements.</strong> Established or amended by the Council on Registration and Eligibility Committee recommendation.</li>
+        <li>
+          <strong>Team Registration.</strong> Any 15+ eligible Players may register as a Team during the annual February registration period. A Team is automatically admitted unless disapproved by two-thirds Council vote (only for noncompliance with registration/eligibility rules or nonpayment of fees), after Committee review. A registered Team stays registered for a full year, with voting/representation rights throughout, unless it disbands or is removed under Article V.
+        </li>
+        <li><strong>Unaffiliated Players.</strong> The Program Registrar helps eligible unaffiliated Players find an appropriate Team.</li>
+        <li>
+          <strong>Team Management.</strong> Each Team selects a Team Manager and Alternate Manager(s) by any method it chooses. The Manager (or an Alternate, in their absence) is the Team's sole representative to other Teams and the League, and is responsible for the Team meeting its scheduled commitments and adhering to League rules and sportsmanship standards.
+        </li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article VII — Rules</h2>
+      <ol class={ol}>
+        <li><strong>Types of Rules.</strong> Beyond these By-Laws and registration/eligibility/structure rules, the Program establishes rules of operation, conduct, and play at two levels: Program rules and League rules.</li>
+        <li><strong>Program Rules.</strong> Established/amended by the Council on Program Rules Committee recommendation; apply to all Leagues, Teams, and Players.</li>
+        <li><strong>League Rules.</strong> Established/amended by majority vote of a League's Team Managers on its Rules Committee's recommendation; apply to all Teams and Players in that League.</li>
+        <li><strong>Rules Conflicts.</strong> Resolved by a joint meeting of the Program Rules Committee and the League Rules Committee; unresolved conflicts go to the Council by majority vote.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article VIII — Program Facilities and Program Finances</h2>
+      <ol class={ol}>
+        <li>
+          <strong>Program Budget.</strong> Each December, the Treasurer submits a budget accounting for the prior year and forecasting the next. The Council amends and approves the operating budget (and may amend it during the year). All expenditures must fall within budget and be approved by both the Treasurer and Commissioner.
+        </li>
+        <li>
+          <strong>Ownership of Property.</strong> Teams and Players may own private property used in the Program without accounting to ERC for it. Property procured by the Program or a League is Program property, owned by ERC and budgeted/accounted for. The Treasurer reports a full property inventory once a year.
+        </li>
+        <li><strong>Leased Facilities.</strong> The Program Commissioner negotiates field/facility rentals and reports costs to the Treasurer for the budget; the Council must approve all such expenditures.</li>
+        <li><strong>Assessment and Payment of Fees.</strong> The Council sets each Team's fee based on its actual cost of participation, less its fair share of ERC subsidies, subject to ERC directives, and sets payment deadlines — Teams that miss them may be excluded from the Program.</li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article IX — Division of Powers</h2>
+      <ol class={ol}>
+        <li><strong>Team.</strong> Decides its own internal affairs, except where League or Program rules apply.</li>
+        <li><strong>League.</strong> Enforces its own rules, except where disputes require Program-level attention.</li>
+        <li><strong>Program Executive Council.</strong> Oversees Program-level management and is the final arbiter of disputes, consistent with ERC rules and guidelines.</li>
+        <li><strong>ERC.</strong> The ERC Administrator oversees the Program and may overrule Council decisions that conflict with ERC's Statement of Understanding, By-Laws, Procedures, or JPL's best interest.</li>
+        <li>
+          <strong>Rights of Appeal.</strong> Any Player or Team may appeal a Team or League decision to the Council, which may decline to hear it and sets (per Program rules) what matters are appealable. Council decisions may not be appealed to ERC, though the ERC Administrator may initiate a review and overrule if necessary.
+        </li>
+      </ol>
+    </div>
+
+    <div class={card}>
+      <h2 class={h2}>Article X — Ratification and Amendment of By-Laws</h2>
+      <ol class={ol}>
+        <li><strong>Ratification.</strong> Effective after approval by two-thirds of Team Managers of all currently registered Teams, and acceptance by the ERC Council.</li>
+        <li><strong>Amendments.</strong> Require two-thirds vote of the Program Executive Council, then two-thirds concurrence by Team Managers of all registered Teams, and acceptance by the ERC Council.</li>
+      </ol>
+    </div>
+  </section>
+</Layout>

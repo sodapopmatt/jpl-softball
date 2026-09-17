@@ -1,0 +1,43 @@
+---
+import SeasonSwitcher from './SeasonSwitcher.astro';
+
+const { league, season, seasons, standings } = Astro.props;
+---
+<div class="mb-10">
+  <h2 class="font-display text-lg font-semibold text-league-red mb-1">{league.name}</h2>
+  <p class="text-sm text-neutral-500 mb-1">{season.label}</p>
+  {season.seasonNote && <p class="text-xs text-neutral-500 mb-3">{season.seasonNote}</p>}
+  {league.standingsNote && <p class="text-xs text-neutral-500 mb-3">{league.standingsNote}</p>}
+
+  <SeasonSwitcher seasons={seasons} activeId={season.id} basePath={`/standings/${league.id.toLowerCase()}`} />
+
+  <div class="overflow-x-auto rounded-xl border border-neutral-200">
+    <table class="w-full text-sm">
+      <thead class="bg-white text-neutral-600 text-left">
+        <tr>
+          <th class="px-4 py-3 font-medium">Team</th>
+          <th class="px-4 py-3 font-medium text-center">W</th>
+          <th class="px-4 py-3 font-medium text-center">L</th>
+          <th class="px-4 py-3 font-medium text-center">RF</th>
+          <th class="px-4 py-3 font-medium text-center">RA</th>
+          <th class="px-4 py-3 font-medium text-center">Diff</th>
+        </tr>
+      </thead>
+      <tbody>
+        {standings.map((t) => (
+          <tr class="border-t border-neutral-100 bg-neutral-50 hover:bg-neutral-100">
+            <td class="px-4 py-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full" style={`background:${t.color}`}></span>
+              {t.name}
+            </td>
+            <td class="px-4 py-3 text-center">{t.w}</td>
+            <td class="px-4 py-3 text-center">{t.l}</td>
+            <td class="px-4 py-3 text-center">{t.rf}</td>
+            <td class="px-4 py-3 text-center">{t.ra}</td>
+            <td class="px-4 py-3 text-center">{t.rf - t.ra > 0 ? '+' : ''}{t.rf - t.ra}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

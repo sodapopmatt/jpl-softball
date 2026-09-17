@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+import teams from '../data/teams.json';
+---
+<Layout title="Team Payments">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2">
+      <a href="/register" class="text-league-red hover:underline">← Register</a>
+    </p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Team Payments</h1>
+    <p class="text-neutral-600 mb-8">Team fee deposit status, by league.</p>
+
+    {leagues.map((league) => (
+      <div class="mb-10">
+        <h2 class="font-display text-lg font-semibold text-league-red mb-3">{league.name}</h2>
+        <div class="rounded-2xl bg-white border border-neutral-200 divide-y divide-neutral-100">
+          {teams.filter((t) => t.league === league.id).map((team) => (
+            <div class="flex items-center justify-between gap-4 px-5 py-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full" style={`background:${team.color}`}></span>
+                <span class="font-medium text-sm">{team.name}</span>
+              </div>
+              {team.paid ? (
+                <span class="rounded-full bg-green-100 text-green-800 text-xs font-semibold px-3 py-1">Paid</span>
+              ) : (
+                <span class="rounded-full bg-red-100 text-red-800 text-xs font-semibold px-3 py-1">Not Paid</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+</Layout>

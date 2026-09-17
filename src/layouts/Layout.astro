@@ -1,0 +1,70 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "JPL Softball League — schedules, standings, and league info." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title} · JPL Softball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 font-body min-h-screen flex flex-col">
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center">
+          <img src="/logo.png" alt="JPL Softball League" class="h-16 sm:h-20 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-700">
+          <a href="/schedule" class="hover:text-neutral-900 transition-colors">Schedule</a>
+          <a href="/standings" class="hover:text-neutral-900 transition-colors">Standings</a>
+          <a href="/teams" class="hover:text-neutral-900 transition-colors">Teams</a>
+          <a href="/free-agents" class="hover:text-neutral-900 transition-colors">Free Agents</a>
+          <a href="/rules" class="hover:text-neutral-900 transition-colors">Rules</a>
+          <a href="/history" class="hover:text-neutral-900 transition-colors">About</a>
+          <a href="/contact" class="hover:text-neutral-900 transition-colors">Contact</a>
+          <a href="/register" class="rounded-full bg-league-red text-white px-4 py-1.5 font-semibold hover:bg-red-500 transition-colors">Register</a>
+        </nav>
+        <details class="md:hidden relative">
+          <summary class="list-none cursor-pointer p-2 -mr-2 text-neutral-700">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="w-10 h-10">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M7.2 4c3.3 3.5 3.3 12.5 0 16" stroke-linecap="round" />
+              <path d="M16.8 4c-3.3 3.5-3.3 12.5 0 16" stroke-linecap="round" />
+              <path d="M8.2 8.4l1.8.6M8 15l1.8-.6" stroke-linecap="round" />
+              <path d="M15.8 8.4l-1.8.6M16 15l-1.8-.6" stroke-linecap="round" />
+            </svg>
+          </summary>
+          <div class="absolute right-0 mt-2 w-48 rounded-xl bg-white border border-neutral-200 shadow-xl p-2 flex flex-col text-sm">
+            <a href="/schedule" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Schedule</a>
+            <a href="/standings" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Standings</a>
+            <a href="/teams" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Teams</a>
+            <a href="/free-agents" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Free Agents</a>
+            <a href="/rules" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Rules</a>
+            <a href="/history" class="px-3 py-2 rounded-lg hover:bg-neutral-100">About</a>
+            <a href="/contact" class="px-3 py-2 rounded-lg hover:bg-neutral-100">Contact</a>
+            <a href="/register" class="px-3 py-2 rounded-lg bg-league-red text-white font-semibold mt-1">Register</a>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-neutral-200 mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex justify-center text-center text-sm text-neutral-600">
+        <p>© {new Date().getFullYear()} JPL Softball League. Run by volunteers, for the love of the game.</p>
+      </div>
+    </footer>
+  </body>
+</html>

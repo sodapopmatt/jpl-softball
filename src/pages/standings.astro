@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+import teams from '../data/teams.json';
+import schedule from '../data/schedule.json';
+import seasons from '../data/seasons.json';
+import StandingsTable from '../components/StandingsTable.astro';
+import { seasonsForLeague, currentSeason } from '../utils/season.js';
+import { standingsFor } from '../utils/standings.js';
+---
+<Layout title="Standings">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Standings</h1>
+    <p class="text-neutral-600 mb-8">Updated automatically as scores come in.</p>
+
+    {leagues.map((league) => {
+      const season = currentSeason(seasons, league.id);
+      const leagueSeasons = seasonsForLeague(seasons, league.id);
+      const standings = standingsFor(teams, schedule, league.id, season.id);
+      return (
+        <StandingsTable league={league} season={season} seasons={leagueSeasons} standings={standings} />
+      );
+    })}
+  </section>
+</Layout>

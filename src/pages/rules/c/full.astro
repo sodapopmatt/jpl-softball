@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const card = 'rounded-2xl bg-white border border-neutral-200 p-6 mb-6';
+const p = 'text-sm text-neutral-700 leading-relaxed mb-3 last:mb-0';
+const ol = 'list-decimal list-outside pl-5 space-y-4 text-sm text-neutral-700 leading-relaxed marker:text-league-red marker:font-semibold';
+const subUl = 'list-[lower-alpha] list-outside pl-5 space-y-1 mt-2';
+---
+<Layout title="C League Full Rules">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2"><a href="/rules/c" class="text-league-red hover:underline">← C League Rules</a></p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">C League Full Rules</h1>
+    <p class="text-neutral-600 mb-8">C League Rules and Regulations</p>
+
+    <div class={card}>
+      <p class={p}>
+        All listed rules and regulations may be revised or waived as the managers of the competing teams agree, so long as there is complete agreement between both parties.
+        Specifically excluded are the sanctions against steel spikes and unnecessarily rough play — these cannot be waived. It is also hoped that Rule 1 is never waived.
+      </p>
+    </div>
+
+    <div class={card}>
+      <ol class={ol}>
+        <li>Have fun!</li>
+        <li>All rostered players appearing for a scheduled game must be assigned a spot in the batting order. No more than three (3) male players may bat in a row before a female must be inserted. If a team can't manage this (fewer than 25% women in the order), a "phantom" female must be added after every three male players — each time a phantom female would come up to bat, the team takes an out.</li>
+        <li>Defensive alignments must include a minimum of three (3) female players, assigned to positions other than catcher.</li>
+        <li>A team unable to field the three required female players must surrender one defensive position for each missing female, up to a maximum of two positions.</li>
+        <li>No walks or strikeouts. The 12-foot height limit on pitches is observed. It's the pitcher's responsibility to throw hittable balls, and the batter's responsibility to swing at reasonable pitches — both managers are responsible for making sure no pitcher or batter unduly delays the game.</li>
+        <li>The general rules of slow-pitch softball prevail in all cases, as amended by these JPL special rules. Ground rules should be agreed upon by the respective team managers before play starts. Umpires are assigned at the managers' discretion and should be familiar with general baseball/softball rules of play.</li>
+        <li>No standings are kept or reported, and no trophies or awards are given.</li>
+        <li>No metal or spiked shoes are allowed on the field at any time, including warm-up. After sufficient warning, continued violations result in removal of the offending player from the game; further violations during the game result in forfeiture by the offending team.</li>
+        <li>Violent sliding or body contact — such as unnecessarily blocking access to a base — is severely discouraged, as is any violence, intimidation, unnecessary abuse, profanity, or other vulgar behavior. The sanctions in Rule 8 apply to repeated offenses.</li>
+        <li>The rules of good sportsmanship, fair play, and consideration for fellow JPL employees and their families prevail above all else, and serve as the operative rule wherever something isn't otherwise defined.</li>
+        <li>There will be field markers (cones) in the outfield, 150 feet from home plate. With 9 or 10 players on the field, at least 3 must stay behind the markers until the ball is hit; with 8 players, 2 fielders must stay behind the markers until the ball is hit. Infielders may not position themselves closer than the baselines (the imaginary line between the bases).</li>
+        <li>A team leading by more than nine (9) runs must surrender one (1) out per inning at bat until the lead is nine runs or fewer. A team leading by more than fourteen (14) runs must surrender two (2) outs per inning at bat until the lead is fourteen runs or fewer.</li>
+        <li>
+          A courtesy runner may be allowed for the batter at home plate, subject to:
+          <ul class={subUl}>
+            <li>The courtesy runner is positioned safely.</li>
+            <li>The courtesy runner is positioned so they gain no advantage over leaving the batter's box after the ball is hit.</li>
+            <li>The courtesy runner is the last recorded out made by a player of the same gender as the batter; if that player isn't available, the runner is any player of the same gender as the batter.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <p class="text-sm text-neutral-500">
+      Program-wide rules and bylaws that apply to all leagues are on the <a class="text-league-red hover:underline" href="/rules">main Rules page</a>.
+    </p>
+  </section>
+</Layout>

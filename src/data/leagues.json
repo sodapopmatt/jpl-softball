@@ -1,0 +1,45 @@
+[
+  {
+    "id": "B",
+    "name": "B League",
+    "tagline": "Competitive",
+    "description": "A competitive slow-pitch league with paid umpires, standard field dimensions, and a male:female ratio of 8:2. Runs three seasons a year: spring, summer, and fall.",
+    "field": "Loma Alta Park, Altadena",
+    "commissioner": { "name": "Austin Oliver", "email": "austin.oliver@jpl.nasa.gov" },
+    "webAdmin": { "name": "Richard Chen", "email": "rchen@jpl.nasa.gov", "phone": "626-359-6300" },
+    "standingsNote": "Standings update automatically as scores are reported.",
+    "freeAgentContacts": [
+      { "name": "Austin Oliver", "email": "austin.oliver@jpl.nasa.gov" },
+      { "name": "Richard Chen", "email": "rchen@jpl.nasa.gov" },
+      { "name": "Jennifer Miller", "email": "jennifer.r.miller@jpl.nasa.gov" }
+    ],
+    "ruleHighlights": [
+      "Slow-pitch, co-ed. A team consists of 10 players, at least 2 of whom are women; games may be played short-handed with 8 rostered players (at least 1 female) without forfeit.",
+      "Games are 7 innings or a 1-hour-10-minute time limit, whichever comes first. A tied game at the time/innings limit ends in a tie (except during tournament play).",
+      "Mercy rule: game ends after 5 innings if a team is ahead by 15+ runs and has completed its at-bat.",
+      "No base stealing. No bunting or deliberate chop hits.",
+      "All players must have a signed waiver on file before taking the field."
+    ]
+  },
+  {
+    "id": "C",
+    "name": "C League",
+    "tagline": "Non-competitive",
+    "description": "A non-competitive, more relaxed league — no balls and strikes, batting team supplies the umpire, home team sets up the field. Male:female ratio of 7:3. One ~18-week season from mid-April to Labor Day.",
+    "field": "Hahamongna Watershed Park, Pasadena",
+    "commissioner": { "name": "Charlie Kaczinski", "email": "ckaczinski@charter.net", "phone": "4-3974" },
+    "webAdmin": { "name": "Richard Chen", "email": "rchen@jpl.nasa.gov", "phone": "4-1259" },
+    "standingsNote": "C League does not track official standings centrally — it's a non-competitive league focused on participation. Check with your team manager for game results.",
+    "freeAgentContacts": [
+      { "name": "Charlie Kaczinski", "email": "ckaczinski@charter.net", "phone": "4-3974" },
+      { "name": "Richard Chen", "email": "rchen@jpl.nasa.gov", "phone": "4-1259" },
+      { "name": "Jennifer Miller", "email": "jennifer.r.miller@jpl.nasa.gov", "phone": "4-5705" }
+    ],
+    "ruleHighlights": [
+      "Non-competitive, no called balls and strikes.",
+      "Male:female ratio of 7:3. The batting team supplies the umpire; the home team sets up the field and is responsible for equipment.",
+      "Games run Monday through Wednesday at Hahamongna Park, ~18-week season from mid-April to Labor Day.",
+      "The only official reporting requirement is forfeits (fewer than 8 players, or no women present)."
+    ]
+  }
+]

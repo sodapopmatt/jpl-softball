@@ -1,0 +1,63 @@
+---
+import GameCard from './GameCard.astro';
+import SeasonSwitcher from './SeasonSwitcher.astro';
+import { parseLocalDate } from '../utils/date.js';
+
+const { league, season, seasons, games, teamById } = Astro.props;
+
+const weeks = [...new Set(games.map((g) => g.week))].sort((a, b) => a - b);
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const upcomingGames = games
+  .filter((g) => parseLocalDate(g.date) >= today)
+  .sort((a, b) => parseLocalDate(a.date) - parseLocalDate(b.date));
+const nextWeek = upcomingGames[0]?.week;
+const upcoming = upcomingGames.filter((g) => g.week === nextWeek);
+---
+<p class="text-sm mb-2">
+  <a href="/schedule" class="text-league-red hover:underline">← All schedules</a>
+</p>
+<h1 class="font-display text-3xl sm:text-4xl font-bold mb-1">{league.name} Schedule</h1>
+<p class={`text-neutral-600 ${season.seasonNote ? 'mb-1' : 'mb-4'}`}>{league.field} · {season.label}</p>
+{season.seasonNote && <p class="text-sm text-neutral-500 mb-4">{season.seasonNote}</p>}
+
+<SeasonSwitcher seasons={seasons} activeId={season.id} basePath={`/schedule/${league.id.toLowerCase()}`} />
+
+<a href={`/schedule/${season.id}.ics`} class="inline-block mb-8 rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-semibold hover:bg-neutral-100 transition-colors">
+  📅 Add this season to calendar (.ics)
+</a>
+
+<div class="mb-12">
+  <h2 class="font-display text-2xl font-bold mb-4">Upcoming</h2>
+  {upcoming.length > 0 ? (
+    <div class="space-y-3">
+      {upcoming.map((game) => <GameCard game={game} teamById={teamById} />)}
+    </div>
+  ) : (
+    <p class="text-sm text-neutral-500 rounded-xl bg-white border border-neutral-200 p-5">
+      No upcoming games scheduled for {league.name}.
+    </p>
+  )}
+</div>
+
+<details class="group mb-8">
+  <summary class="flex items-center justify-between gap-2 cursor-pointer list-none rounded-xl bg-white border border-neutral-200 px-5 py-4 hover:border-league-red/40 transition-colors">
+    <span class="font-display text-xl font-bold">Full Schedule</span>
+    <span class="flex items-center gap-1.5 text-sm text-neutral-500">
+      <span class="group-open:hidden">Show all</span>
+      <span class="hidden group-open:inline">Hide</span>
+      <span class="inline-block transition-transform group-open:rotate-180">▾</span>
+    </span>
+  </summary>
+  <div class="pt-6">
+  {weeks.map((week) => (
+    <div class="mb-8">
+      <h3 class="font-display text-lg font-semibold text-league-red mb-3">Week {week}</h3>
+      <div class="space-y-3">
+        {games.filter((g) => g.week === week).map((game) => <GameCard game={game} teamById={teamById} />)}
+      </div>
+    </div>
+  ))}
+  </div>
+</details>

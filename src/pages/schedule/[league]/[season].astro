@@ -1,0 +1,29 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import leagues from '../../../data/leagues.json';
+import teams from '../../../data/teams.json';
+import schedule from '../../../data/schedule.json';
+import seasons from '../../../data/seasons.json';
+import ScheduleView from '../../../components/ScheduleView.astro';
+import { seasonsForLeague } from '../../../utils/season.js';
+
+export function getStaticPaths() {
+  return seasons.map((s) => {
+    const league = leagues.find((l) => l.id === s.league);
+    return {
+      params: { league: league.id.toLowerCase(), season: s.id },
+      props: { league, season: s },
+    };
+  });
+}
+
+const { league, season } = Astro.props;
+const teamById = Object.fromEntries(teams.map((t) => [t.id, t]));
+const leagueSeasons = seasonsForLeague(seasons, league.id);
+const games = schedule.filter((g) => g.season === season.id);
+---
+<Layout title={`${league.name} Schedule — ${season.label}`}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <ScheduleView league={league} season={season} seasons={leagueSeasons} games={games} teamById={teamById} />
+  </section>
+</Layout>

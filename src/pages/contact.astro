@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import leagues from '../data/leagues.json';
+
+const programContacts = [
+  { role: 'Program Registrar', name: 'Jennifer Miller', email: 'Jennifer.R.Miller@jpl.nasa.gov', phone: '4-5705' },
+  { role: 'Program Treasurer', name: 'Sam Dolinar', email: 'sam.dolinar@jpl.nasa.gov', phone: '4-7403' },
+  { role: 'Program Website Administrator', name: 'Sam Dolinar', email: 'sam.dolinar@jpl.nasa.gov', phone: '4-7403' },
+];
+---
+<Layout title="Contact">
+  <section class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mb-2">Contact &amp; Board</h1>
+    <p class="text-neutral-600 mb-8">Looking for a team, want to manage one, or have a question about the program? Reach out below.</p>
+
+    <h2 class="font-display text-lg font-semibold text-league-red mb-3">Program-wide</h2>
+    <div class="space-y-4 mb-10">
+      {programContacts.map((c) => (
+        <div class="rounded-xl bg-white border border-neutral-200 p-5">
+          <p class="font-semibold">{c.role}</p>
+          <p class="text-neutral-600 text-sm">{c.name} — <a class="hover:underline" href={`mailto:${c.email}`}>{c.email}</a>{c.phone ? ` (${c.phone})` : ''}</p>
+        </div>
+      ))}
+    </div>
+
+    {leagues.map((league) => (
+      <div class="mb-10">
+        <h2 class="font-display text-lg font-semibold text-league-red mb-3">{league.name}</h2>
+        <div class="space-y-4">
+          <div class="rounded-xl bg-white border border-neutral-200 p-5">
+            <p class="font-semibold">Commissioner</p>
+            <p class="text-neutral-600 text-sm">
+              {league.commissioner.name} — <a class="hover:underline" href={`mailto:${league.commissioner.email}`}>{league.commissioner.email}</a>
+              {league.commissioner.phone ? ` (${league.commissioner.phone})` : ''}
+            </p>
+          </div>
+          <div class="rounded-xl bg-white border border-neutral-200 p-5">
+            <p class="font-semibold">Website Administrator</p>
+            <p class="text-neutral-600 text-sm">
+              {league.webAdmin.name} — <a class="hover:underline" href={`mailto:${league.webAdmin.email}`}>{league.webAdmin.email}</a>
+              {league.webAdmin.phone ? ` (${league.webAdmin.phone})` : ''}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+</Layout>

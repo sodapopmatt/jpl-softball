@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import leagues from '../../data/leagues.json';
+
+export function getStaticPaths() {
+  return leagues.map((l) => ({
+    params: { league: l.id.toLowerCase() },
+    props: { league: l },
+  }));
+}
+
+const { league } = Astro.props;
+---
+<Layout title={`${league.name} Rules`}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <p class="text-sm mb-2">
+      <a href="/rules" class="text-league-red hover:underline">← All rules</a>
+    </p>
+    <div class="flex items-center justify-between mb-2">
+      <h1 class="font-display text-3xl sm:text-4xl font-bold">{league.name} Rules</h1>
+      <span class="text-xs uppercase tracking-wide text-neutral-500">{league.tagline}</span>
+    </div>
+    <p class="text-neutral-600 mb-8">{league.description}</p>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6 mb-8">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-4">Highlights</h2>
+      <ul class="space-y-3 text-sm text-neutral-700 list-disc list-inside">
+        {league.ruleHighlights.map((rule) => <li>{rule}</li>)}
+      </ul>
+    </div>
+
+    <div class="rounded-2xl bg-white border border-neutral-200 p-6">
+      <h2 class="font-display text-lg font-semibold text-league-red mb-2">Full rules</h2>
+      <p class="text-sm text-neutral-700">
+        These highlights are a summary. For the complete, official rule set, see the{' '}
+        <a class="text-league-red hover:underline" href={`/rules/${league.id.toLowerCase()}/full`}>{league.name} Full Rules</a> page.
+      </p>
+      <p class="text-sm text-neutral-600 mt-3">
+        Program-wide rules and bylaws that apply to all leagues are on the <a class="text-league-red hover:underline" href="/rules">main Rules page</a>.
+      </p>
+    </div>
+  </section>
+</Layout>

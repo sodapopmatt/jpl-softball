@@ -1,0 +1,54 @@
+---
+const RECENT_COUNT = 2;
+
+const { seasons, activeId, basePath } = Astro.props;
+
+let pills = seasons.slice(0, RECENT_COUNT);
+if (activeId && !pills.some((s) => s.id === activeId)) {
+  const active = seasons.find((s) => s.id === activeId);
+  if (active) pills = [active, ...pills.slice(0, RECENT_COUNT - 1)];
+}
+const pillIds = new Set(pills.map((s) => s.id));
+const older = seasons.filter((s) => !pillIds.has(s.id));
+---
+{seasons.length > 1 && (
+  <div class="flex flex-wrap items-center gap-2 mb-6">
+    {pills.map((s) => (
+      <a
+        href={`${basePath}/${s.id}`}
+        class={`rounded-full px-4 py-1.5 text-sm font-medium border transition-colors ${
+          s.id === activeId
+            ? 'bg-league-red text-white border-league-red'
+            : 'border-neutral-300 text-neutral-700 hover:bg-neutral-100'
+        }`}
+      >
+        {s.label}
+      </a>
+    ))}
+    {older.length > 0 && (
+      <select
+        class="season-picker rounded-full border border-neutral-300 text-sm font-medium text-neutral-700 px-4 py-1.5 bg-white hover:bg-neutral-100 transition-colors"
+        data-base-path={basePath}
+      >
+        <option value="" selected={!older.some((s) => s.id === activeId)} disabled>
+          Older seasons…
+        </option>
+        {older.map((s) => (
+          <option value={s.id} selected={s.id === activeId}>
+            {s.label}
+          </option>
+        ))}
+      </select>
+    )}
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('.season-picker').forEach((el) => {
+    el.addEventListener('change', (e) => {
+      const target = e.currentTarget;
+      const basePath = target.dataset.basePath;
+      if (target.value) window.location.href = `${basePath}/${target.value}`;
+    });
+  });
+</script>
